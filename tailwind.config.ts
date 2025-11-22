@@ -9,11 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       backgroundColor: {
-        'primary-01': '#8fcbd9',
+        'primary-01': '#F54927',
         'secondary-01': '#E0E0E0',
       },
       colors: {
-        'primary-01': '#8fcbd9',
+        'primary-01': '#F54927',
         'secondary-01': '#E0E0E0',
       },
     },

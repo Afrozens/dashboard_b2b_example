@@ -9,7 +9,7 @@ const HomePage = () => {
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center space-x-4">
               <div>
-                <h1 className="text-3xl font-bold text-gray-900">Employee Dashboard</h1>
+                <h1 className="text-3xl font-bold text-gray-900">User Dashboard</h1>
                 <p className="text-gray-500 mt-1">Manage your team efficiently</p>
               </div>
             </div>
