@@ -1,7 +1,6 @@
+import ContainerHome from "@/components/dashboard/ContainerHome";
 
 const HomePage = () => {
-  const currentDate = new Date();
-
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white border-b border-gray-200">
@@ -26,7 +25,7 @@ const HomePage = () => {
       </div>
 
       <div className="max-w-8xl mx-auto px-6 py-8">
-        
+        <ContainerHome />
       </div>
     </div>
   );
