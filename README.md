@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dashboard B2B Test
 
-## Getting Started
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-First, run the development server:
+
+## Features
+
+- 📊 Edit Client
+- 🔍 Datatable with list of Client
+- ⚡ Chart, Widget of data Client
+- ⚡ Overview of Client
+- 🛡️ Authentication (login, user me in server side)
+
+## Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Structure
+```bash
+dashboard_b2b_example/
+├── src/
+│   ├── app/
+│   ├── components/
+│   ├── fonts/
+│   ├── hooks/
+│   ├── models/
+│   ├── stub/
+│   ├── styles/
+│   ├── utils/
+│   └── middleware.ts/
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Dependency
+```json
+{
+  "dependencies": {
+    "@ant-design/icons": "^6.1.0",
+    "@faker-js/faker": "^10.0.0",
+    "@hookform/resolvers": "^5.2.2",
+    "@tanstack/react-query": "^5.90.2",
+    "antd": "^5.27.4",
+    "next": "14.2.33",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-hook-form": "^7.64.0",
+    "react-select": "^5.10.2",
+    "sonner": "^2.0.7",
+    "tailwindcss-animated": "^2.0.0",
+    "zod": "^4.1.11"
+  },
+}
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Inspiration of UI
+https://ant.design
