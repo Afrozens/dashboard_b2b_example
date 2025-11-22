@@ -1,0 +1,1 @@
+export const regexPassword = /^[a-zA-Z0-9]{8,}$/;
