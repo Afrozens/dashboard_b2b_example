@@ -14,7 +14,6 @@ interface Props<T> {
     page?: number,
     limit?: number,
     filter?: string,
-    option?: string[],
     sortField?: string,
     sortOrder?: 'ascend' | 'descend',
   ) => Promise<Paginate<T>>;
@@ -49,7 +48,6 @@ const TemplateDatatable = <T extends object>({
           currentPage,
           10,
           filter?.toLowerCase(),
-          option,
           sortField,
           sortOrder,
         );

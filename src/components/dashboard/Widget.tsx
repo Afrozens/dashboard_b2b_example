@@ -3,7 +3,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { Card, Spin } from 'antd';
 import ButtonPrimary from '../commons/buttons/ButtonPrimary';
-import getSplitName, { colors } from '@/utils/getSplitName';
+import { colors } from '@/utils/getSplitName';
 
 interface Props {
   classService: () => Promise<any>;

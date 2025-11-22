@@ -1,7 +1,6 @@
 import { Client, ClientChart, ClientStats, RevenueChart, RevenueStats } from '@/models/client';
 import { Paginate } from '@/models/common';
 import { generateClientChartData, generateClientStats, generateComputerStats, generateRevenueChartData, generateRevenueStats, generateSalesStats } from '@/stub/data';
-import { faker } from '@faker-js/faker';
 
 /**
  * Service class for handling Client-related operations including:
@@ -102,7 +101,6 @@ class ClientService {
      * @param {number} page - Current page number (default: 1)
      * @param {number} limit - Number of items per page (default: 10)
      * @param {string} filter - Global filter term for name, email, or department
-     * @param {string[]} options - Array of selected departments and countries
      * @returns {Promise<Paginate<Client>>} Paginated response with Client data
      * @throws {Error} When the request fails
      */
@@ -110,7 +108,6 @@ class ClientService {
         page: number = 1,
         limit: number = 10,
         filter: string | undefined = '',
-        options: string[] = [],
         sortField?: string,
         sortOrder?: 'ascend' | 'descend',
     ): Promise<Paginate<Client>> {

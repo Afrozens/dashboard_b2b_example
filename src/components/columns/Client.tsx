@@ -21,7 +21,7 @@ const columnclient = () => {
       title: 'Email',
       dataIndex: 'email',
       key: 'email',
-      render: (text, record) => (
+      render: (text) => (
         <span> {text} </span>
       ),
     },

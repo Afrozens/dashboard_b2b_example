@@ -1,5 +1,3 @@
-import Image from "next/image"
-
 import Card from "@/components/general/Card"
 import LoginForm from "@/components/form/LoginForm"
 
