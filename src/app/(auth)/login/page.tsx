@@ -9,7 +9,7 @@ const LoginPage = () => {
 			<section className="col-span-1 min-h-screen w-full md:col-span-2 flex justify-center items-center bg-white">
 				<Card classAditional="md:shadow-none md:border-none">
 					<h1 className="text-balance text-3xl font-extrabold leading-none tracking-tight text-gray-900 text-center mb-2">
-						Welcome back! 🤓
+						Welcome back!
 					</h1>
 					<p className="text-center whitespace-nowrap text-lg mb-5">
 						Enter your Credentials to access your account
@@ -18,13 +18,7 @@ const LoginPage = () => {
 				</Card>
 			</section>
 			<section className="w-full md:min-h-screen md:flex justify-center items-center hidden col-start-3 col-end-7">
-				<Image
-					width={550}
-					height={550}
-					className="mx-auto"
-					alt="svg icon from ilustration"
-					src="/images/login-illustrator.svg"
-				/>
+				
 			</section>
 		</article>
   )
