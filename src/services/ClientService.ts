@@ -1,5 +1,7 @@
-import { Client } from '@/models/client';
+import { Client, ClientStats, RevenueStats } from '@/models/client';
 import { Paginate } from '@/models/common';
+import { generateClientStats, generateComputerStats, generateRevenueStats, generateSalesStats } from '@/stub/data';
+import { faker } from '@faker-js/faker';
 
 /**
  * Service class for handling Client-related operations including:
@@ -158,6 +160,59 @@ class ClientService {
             throw error;
         }
     }
+    
+    /**
+     * Retrieves client statistics including total clients and monthly metrics
+     * @returns Promise resolving to ClientStats with title and generated data
+     */
+    async getClientStats(): Promise<ClientStats> {
+        await new Promise(resolve => setTimeout(resolve, Math.random() * 500 + 300));
+        
+        return {
+            title: "Clients Obtained",
+            ...generateClientStats()
+        };
+    }
+
+    /**
+     * Retrieves computer statistics including queue and availability metrics
+     * @returns Promise resolving to ComputerStats with title and generated data
+     */
+    async getComputerStats(): Promise<any> {
+        await new Promise(resolve => setTimeout(resolve, Math.random() * 500 + 300));
+        
+        return {
+        title: "Computers in Queue", 
+        ...generateComputerStats()
+        };
+    }
+
+    /**
+     * Retrieves sales statistics including completed sales and conversion rates
+     * @returns Promise resolving to SalesStats with title and generated data
+     */
+    async getSalesStats(): Promise<any> {
+        await new Promise(resolve => setTimeout(resolve, Math.random() * 500 + 300));
+        
+        return {
+            title: "Sales Achieved",
+            ...generateSalesStats()
+        };
+    };
+
+    /**
+     * Retrieves revenue statistics including current revenue and growth metrics
+     * @returns Promise resolving to RevenueStats with title and generated data
+     */
+    async getRevenueStats(): Promise<RevenueStats> {
+        await new Promise(resolve => setTimeout(resolve, Math.random() * 500 + 300));
+        
+        return {
+            title: "Current Revenue",
+            ...generateRevenueStats()
+        };
+    }
+
 }
 
 export default ClientService;

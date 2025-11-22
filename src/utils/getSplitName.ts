@@ -2,7 +2,7 @@
  * Array of predefined colors in hexadecimal format
  * Used for generating consistent avatar backgrounds
  */
-const colors = [
+export const colors = [
   '#001219', // dark blue
   '#005f73', // teal
   '#0a9396', // light teal
