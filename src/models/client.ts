@@ -42,3 +42,27 @@ export interface RevenueStats extends BaseStats {
     averageTicket: number;
   };
 }
+
+export interface BaseChart {
+  title: string;
+  chartType: 'line' | 'bar' | 'pie' | 'area';
+  data: any;
+}
+
+export interface RevenueChart extends BaseChart {
+  chartType: 'line';
+  data: {
+    months: string[];
+    revenue: number[];
+    growth: number[];
+  };
+}
+
+export interface ClientChart extends BaseChart {
+  chartType: 'bar';
+  data: {
+    months: string[];
+    newClients: number[];
+    returningClients: number[];
+  };
+}

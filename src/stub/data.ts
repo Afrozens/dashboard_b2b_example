@@ -1,7 +1,7 @@
 import { faker } from "@faker-js/faker";
 
 import { User } from "@/models/user";
-import { ClientStats, ComputerStats, RevenueStats, SalesStats } from "@/models/client";
+import { ClientChart, ClientStats, ComputerStats, RevenueChart, RevenueStats, SalesStats } from "@/models/client";
 
 export const stubUser: User = {
     id: 'asjdlkjsdlkasjdlkadjslkajsd',
@@ -69,6 +69,38 @@ export const generateRevenueStats = (): Omit<RevenueStats, 'title'> => {
       monthlyTarget: faker.number.int({ min: 100000, max: 300000 }),
       growth: faker.number.float({ min: -5, max: 25, fractionDigits: 1 }),
       averageTicket: faker.number.int({ min: 50, max: 200 })
+    }
+  };
+};
+
+export const generateRevenueChartData = (): Omit<RevenueChart, 'title' | 'chartType'> => {
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  
+  return {
+    data: {
+      months: months.slice(0, 6),
+      revenue: Array.from({ length: 6 }, () => 
+        faker.number.int({ min: 20000, max: 100000 })
+      ),
+      growth: Array.from({ length: 6 }, () => 
+        faker.number.float({ min: -10, max: 25, fractionDigits: 1 })
+      )
+    }
+  };
+};
+
+export const generateClientChartData = (): Omit<ClientChart, 'title' | 'chartType'> => {
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
+  
+  return {
+    data: {
+      months,
+      newClients: Array.from({ length: 6 }, () => 
+        faker.number.int({ min: 20, max: 100 })
+      ),
+      returningClients: Array.from({ length: 6 }, () => 
+        faker.number.int({ min: 50, max: 200 })
+      )
     }
   };
 };

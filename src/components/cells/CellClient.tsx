@@ -1,6 +1,6 @@
 'use client';
 
-import { MailOutlined, ShopOutlined } from "@ant-design/icons";
+import { MailOutlined } from "@ant-design/icons";
 import Link from "next/link";
 
 import { Client } from "@/models/client";
@@ -10,7 +10,7 @@ interface Props {
     record: Client;
 }
 
-const CellEmployee = ({ record }: Props) => {
+const CellClient = ({ record }: Props) => {
   return (
     <div
       className={`flex w-full items-center justify-start gap-1 truncate`}
@@ -41,4 +41,4 @@ const CellEmployee = ({ record }: Props) => {
   )
 }
 
-export default CellEmployee
+export default CellClient

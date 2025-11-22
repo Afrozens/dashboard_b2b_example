@@ -1,6 +1,6 @@
 'use client';
 
-import { PropsWithChildren, useEffect } from "react";
+import { PropsWithChildren, useEffect, useMemo } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import Header from "./Header";
@@ -13,7 +13,12 @@ interface Props extends PropsWithChildren {
 
 const TemplateDashboard = ({ children, user }: Props) => {
   const queryClient = new QueryClient();
-  const dataStorage = localStorage.getItem('data-stub');
+  const dataStorage = useMemo(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem('data-stub');
+    }
+    return null
+  }, [])
 
   useEffect(() => {
     if (!dataStorage) {

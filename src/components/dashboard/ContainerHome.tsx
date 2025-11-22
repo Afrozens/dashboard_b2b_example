@@ -10,6 +10,7 @@ import StructuredModal from "../general/StructureModal";
 import useOpen from "@/hooks/useOpen";
 import { DesktopOutlined, DollarOutlined, ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
 import Widget from "./Widget";
+import Visualizator from "./Visualizator";
 
 const ContainerHome = () => {
     const clientService = new ClientService();
@@ -41,6 +42,18 @@ const ContainerHome = () => {
         }
     ];
 
+    const chartServices = [
+        {
+            service: clientService.getClientChart,
+            name: "client-chart"
+        },
+        {
+            service: clientService.getRevenueChart,
+            name: "revenue-chart"
+        }
+    ];
+
+
     return (
         <>
             <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
@@ -54,6 +67,18 @@ const ContainerHome = () => {
                     />
                 ))}
             </section>
+
+            <section className="grid grid-cols-1 lg:grid-cols-2 gap-6 p-4">
+                {chartServices.map((chart, index) => (
+                    <Visualizator
+                        key={index}
+                        classService={chart.service}
+                        name={chart.name}
+                        withCache={true}
+                    />
+                ))}
+            </section>
+
             <header className="w-full flex justify-end gap-5 mt-10 px-10 items-center">
                 <FieldInput 
                     label="filter"
@@ -71,7 +96,7 @@ const ContainerHome = () => {
                 columns={column}
                 sortableColumns={sortableColumns}
                 classService={clientService.clientPaginate}
-                name='Clients'
+                name='clients'
                 filter={debouncedFilter}
                 withCache
             />

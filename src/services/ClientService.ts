@@ -1,6 +1,6 @@
-import { Client, ClientStats, RevenueStats } from '@/models/client';
+import { Client, ClientChart, ClientStats, RevenueChart, RevenueStats } from '@/models/client';
 import { Paginate } from '@/models/common';
-import { generateClientStats, generateComputerStats, generateRevenueStats, generateSalesStats } from '@/stub/data';
+import { generateClientChartData, generateClientStats, generateComputerStats, generateRevenueChartData, generateRevenueStats, generateSalesStats } from '@/stub/data';
 import { faker } from '@faker-js/faker';
 
 /**
@@ -210,6 +210,34 @@ class ClientService {
         return {
             title: "Current Revenue",
             ...generateRevenueStats()
+        };
+    }
+
+    /**
+     * Retrieves revenue growth chart data for visualization
+     * @returns Promise resolving to RevenueChart with title and generated data
+     */
+    async getRevenueChart(): Promise<RevenueChart> {
+        await new Promise(resolve => setTimeout(resolve, Math.random() * 500 + 300));
+        
+        return {
+            title: "Revenue Growth",
+            chartType: 'line',
+            ...generateRevenueChartData()
+        };
+    }
+
+    /**
+     * Retrieves client acquisition chart data for visualization
+     * @returns Promise resolving to ClientChart with title and generated data
+     */
+    async getClientChart(): Promise<ClientChart> {
+        await new Promise(resolve => setTimeout(resolve, Math.random() * 500 + 300));
+        
+        return {
+            title: "Client Acquisition",
+            chartType: 'bar',
+            ...generateClientChartData()
         };
     }
 
